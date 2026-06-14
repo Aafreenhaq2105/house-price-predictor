@@ -1,12 +1,16 @@
 import streamlit as st
-import pickle
+import pandas as pd
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
-# Load the trained model
-with open('model.pkl', 'rb') as f:
-    model = pickle.load(f)
+# Train the model directly
+df = pd.read_csv('data.csv')
+X = df[['size', 'bedrooms', 'age']]
+y = df['price']
+model = LinearRegression()
+model.fit(X, y)
 
-# Page title and description
+# Page title
 st.title("House Price Predictor")
 st.write("Enter the details of a house to get an instant price estimate.")
 
@@ -17,8 +21,7 @@ age = st.number_input("Age of house (years)", min_value=0, max_value=100, value=
 
 # Predict button
 if st.button("Predict Price"):
-    input_data = np.array([[size, bedrooms, age]])
+    input_data = pd.DataFrame([[size, bedrooms, age]], columns=['size', 'bedrooms', 'age'])
     prediction = model.predict(input_data)
-    
     st.success(f"Predicted House Price: Rs {prediction[0]:,.0f}")
     st.balloons()
