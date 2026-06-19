@@ -1,24 +1,62 @@
 # House Price Predictor
 
-A machine learning web application that predicts house prices based on size, bedrooms, and age of the property.
+An AI/ML web app that predicts house prices based on size, bedrooms, and age.
 
-## What this project does
-- Takes house details as input (size, bedrooms, age)
-- Predicts the price instantly using a trained ML model
-- Built as an interactive web app using Streamlit
+## 🔗 Live App
+**[Click Here to Use the App](https://house-price-predictor-4ckspbcqxctfaffwme5nnp.streamlit.app/)**
 
-## Technologies used
+## What It Does
+- Enter house details (size in sq ft, number of bedrooms, age in years)
+- Model instantly predicts the price
+- Shows predicted price in Rupees
+
+## Technology Stack
 - Python
 - scikit-learn (Linear Regression)
 - pandas
 - Streamlit
-- matplotlib
-- Git & GitHub
+- GitHub
 
-## How to run
-1. Clone this repository
-2. Install requirements: `pip install pandas scikit-learn matplotlib streamlit`
-3. Run: `streamlit run app.py`
+## How It Works
+1. Trained on 20 houses with their actual prices
+2. Uses Linear Regression algorithm
+3. Learns the relationship between features and price
+4. Predicts price for new houses
 
-## Model accuracy
-Average prediction error: Rs 1,56,682
+## Model Details
+- Algorithm: Linear Regression
+- Type: Regression (predicts numerical value)
+- Features: 3 house attributes (size, bedrooms, age)
+- Average Prediction Error: Rs 1,56,682
+
+## How to Use
+1. Open the live app link above
+2. Enter house details
+3. Click Predict Price
+4. Get instant price estimate
+
+## Run Locally
+```bash
+git clone https://github.com/Aafreenhaq2105/house-price-predictor.git
+cd house-price-predictor
+pip install -r requirements.txt
+python train.py
+streamlit run app.py
+```
+
+## Project Files
+- `app.py` - Streamlit web application
+- `train.py` - Model training code
+- `data.csv` - Training data
+- `model.pkl` - Trained model
+- `requirements.txt` - Dependencies
+
+## Skills Demonstrated
+✅ Machine Learning Regression
+✅ Python Programming
+✅ Web App Development (Streamlit)
+✅ Model Deployment
+✅ GitHub & Git
+
+## Status
+✅ Complete and Live
